@@ -44,7 +44,7 @@ function Home() {
               {activity.name} | Task Number: {activity.public_id} &nbsp;
             </span>
             <button onClick={() => handleDeleteActivity(activity.id)}>
-              Delete
+              Can't delete because it's history (can only correct recod).
             </button>
           </li>
         ))}
