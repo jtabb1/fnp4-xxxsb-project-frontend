@@ -7,7 +7,7 @@ function NewSignup({ camperId, onAddActivity }) {
   const [errors, setErrors] = useState([]);
 
   useEffect(() => {
-    fetch("/activities")
+    fetch("/tasks")
       .then((r) => r.json())
       .then(setActivities);
   }, []);
@@ -19,7 +19,7 @@ function NewSignup({ camperId, onAddActivity }) {
       camper_id: camperId,
       time: Number(time),
     };
-    fetch("/signups", {
+    fetch("/trainings", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +41,7 @@ function NewSignup({ camperId, onAddActivity }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Add New Signup</h2>
+      <h2>Add New Training</h2>
       <div>
         <label htmlFor="activity">Activity</label>
         <select
@@ -57,7 +57,7 @@ function NewSignup({ camperId, onAddActivity }) {
           ))}
         </select>
       </div>
-      <div>
+      {/* <div>
         <label htmlFor="time">Time</label>
         <input
           type="number"
@@ -65,7 +65,7 @@ function NewSignup({ camperId, onAddActivity }) {
           value={time}
           onChange={(e) => setTime(e.target.value)}
         />
-      </div>
+      </div> */}
       {errors.map((err) => (
         <p key={err} style={{ color: "red" }}>
           {err}

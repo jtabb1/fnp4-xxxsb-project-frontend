@@ -11,7 +11,7 @@ function Camper() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`/campers/${id}`).then((r) => {
+    fetch(`/employees/${id}`).then((r) => {
       if (r.ok) {
         r.json().then((camper) =>
           setCamper({ data: camper, error: null, status: "resolved" })
@@ -30,7 +30,7 @@ function Camper() {
       status,
       data: {
         ...camper,
-        activities: [...camper.activities, newActivity],
+        tasks: [...camper.tasks, newActivity],
       },
     });
   }
@@ -41,10 +41,13 @@ function Camper() {
   return (
     <div>
       <h2>{camper.name}'s Activities</h2>
+      {/* <p>
+        {camper}
+      </p> */}
       <ul>
-        {camper.activities.map((activity) => (
+        {camper.tasks.map((activity) => (
           <li key={activity.id}>
-            {activity.name} | Difficulty: {activity.difficulty}
+            {activity.name} | Task Number: {activity.public_id}
           </li>
         ))}
       </ul>

@@ -12,7 +12,7 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/campers/:id">
+        <Route exact path="/employees/:id">
           <Camper />
         </Route>
       </Switch>

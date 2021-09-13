@@ -41,7 +41,7 @@ function Home() {
         {activities.map((activity) => (
           <li key={activity.id}>
             <span>
-              {activity.name} | Difficulty: {activity.difficulty}
+              {activity.name} | Task Number: {activity.public_id} &nbsp;
             </span>
             <button onClick={() => handleDeleteActivity(activity.id)}>
               Delete
@@ -55,9 +55,9 @@ function Home() {
         {campers.map((camper) => (
           <li key={camper.id}>
             <span>
-              {camper.name}, age {camper.age}
+              {camper.name}, Employee Number: {camper.public_id} &nbsp;
             </span>
-            <Link to={`/campers/${camper.id}`}>View Activities</Link>
+            <Link to={`/employees/${camper.id}`}>View What They Are Trained On</Link>
           </li>
         ))}
       </ul>
