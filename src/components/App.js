@@ -6,7 +6,7 @@ function App() {
   return (
     <main>
       <h1>
-        <Link to="/">Camping Fun</Link>
+        <Link to="/">Working Fun</Link>
       </h1>
       <Switch>
         <Route exact path="/">

@@ -7,13 +7,13 @@ function Home() {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch("/activities")
+    fetch("/tasks")
       .then((r) => r.json())
       .then(setActivities);
   }, []);
 
   useEffect(() => {
-    fetch("/campers")
+    fetch("/employees")
       .then((r) => r.json())
       .then(setCampers);
   }, []);
@@ -23,7 +23,7 @@ function Home() {
   }
 
   function handleDeleteActivity(id) {
-    fetch(`/activities/${id}`, {
+    fetch(`/tasks/${id}`, {
       method: "DELETE",
     }).then((r) => {
       if (r.ok) {
@@ -36,7 +36,7 @@ function Home() {
 
   return (
     <div>
-      <h2>Activities</h2>
+      <h2>Tasks</h2>
       <ul>
         {activities.map((activity) => (
           <li key={activity.id}>
@@ -50,7 +50,7 @@ function Home() {
         ))}
       </ul>
       <hr />
-      <h2>Campers</h2>
+      <h2>Employees</h2>
       <ul>
         {campers.map((camper) => (
           <li key={camper.id}>
