@@ -155,13 +155,14 @@ function D3LineGraph({ data,
 
   return data !== null ?  (
     // <div>
-      <div className='container'>
-        <div className='row'>
-          <div className='col'>
-            <svg ref={svgRef}></svg>
-          </div>
-        </div>
-      </div>
+    <div></div>
+      // <div className='container'>
+      //   <div className='row'>
+      //     <div className='col'>
+      //       <svg ref={svgRef}></svg>
+      //     </div>
+      //   </div>
+      // </div>
     // </div>
   ) : (
     <p>loading graph data... </p>
