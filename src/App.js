@@ -2,9 +2,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import "./App.css";
 import NavBar from "./components/NavBar";
 import HomePage from "./components/HomePage";
-import EeContainer from "./components/EeContainer";
+import EmployeeContainer from "./components/EmployeeContainer";
 // import CategoryDetails from "./components/CategoryDetails";
-// import JoinTable from "./components/JoinTable";
 
 function App() {
   return (
@@ -17,7 +16,7 @@ function App() {
             <HomePage />
           </Route>
           <Route exact path="/employees">
-            <EeContainer />
+            <EmployeeContainer />
           </Route>
         </Switch>
       </div>
