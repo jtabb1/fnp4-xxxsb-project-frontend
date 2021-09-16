@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { BASE_URL } from "../constraints/index.js";
+// import { BASE_URL } from "../constraints/index.js";
 // import Ee from "./Employee.js";
 import EmployeeHire from "./EmployeeHire";
 import '../styles/EmployeeContainer.css'
@@ -11,7 +11,7 @@ export default function EmployeeContainer() {
   // READ
 
   useEffect(() => {
-    fetch(BASE_URL + "employees")
+    fetch(`/employees`)
       .then((res) => res.json())
       .then(setEmployees)
       .then(console.log);
