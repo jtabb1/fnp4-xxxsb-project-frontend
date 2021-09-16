@@ -18,19 +18,24 @@ export default function EmployeeContainer() {
       // .then((json) => setEmployees(json));
   }, []);
   
+  function onHireEmployee(newEmployee) {
+    setEmployees((employees) => [...employees, newEmployee])
+  }
+
   return (
       <div>
-          <h2 className="home-page-header">Employee List</h2>
-          <ul>
-            {employees.map((employee) => (
-              <li key={employee.id}>
-                <span>
-                  {employee.name},   {employee.public_id}
-                </span>
-                <Link to={`/employees/${employee.id}`}>Details</Link>
-              </li>
-            ))}
+        <h2 className="home-page-header">Employee List</h2>
+        <ul>
+          {employees.map((employee) => (
+            <li key={employee.id}>
+              <span>
+                {employee.name},   {employee.public_id}
+              </span>
+              <Link to={`/employees/${employee.id}`}>Details</Link>
+            </li>
+          ))}
         </ul>
+        <EmployeeHire onHireEmployee={onHireEmployee} />
       </div>
   );
 }

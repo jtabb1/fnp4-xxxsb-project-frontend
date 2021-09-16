@@ -48,7 +48,7 @@ function EmployeeHire({ onHireEmployee }) {
         <input
           type="number"
           id="employeeNum"
-          value={age}
+          value={employeeNum}
           onChange={(e) => setEmployeeNum(e.target.value)}
         />
       </div>
@@ -62,4 +62,4 @@ function EmployeeHire({ onHireEmployee }) {
   );
 }
 
-export default EmployeeHire;
+export default EmployeeHire
