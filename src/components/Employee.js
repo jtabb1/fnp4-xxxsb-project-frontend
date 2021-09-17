@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-// import NewTraining from "./NewTraining";
+import TrainingAdd from "./TrainingAdd";
 
 function Employee() {
   const [{ data: employee, error, status }, setEmployee] = useState({
@@ -24,16 +24,18 @@ function Employee() {
     });
   }, [id]);
 
-  // function handleAddTraining(newTraining) {
-  //   setEmployee({
-  //     error,
-  //     status,
-  //     data: {
-  //       ...employee,
-  //       tasks: [...employee.tasks, newTraining],
-  //     },
-  //   });
-  // }
+  /* */
+  function handleAddDisplayTask(newTask) {
+    setEmployee({
+      error,
+      status,
+      data: {
+        ...employee,
+        tasks: [...employee.tasks, newTask],
+      },
+    });
+  }
+  /* */
 
   if (status === "pending") return <h2>Loading...</h2>;
   if (status === "rejected") return <h2>Error: {error}</h2>;
@@ -52,7 +54,7 @@ function Employee() {
         ))}
       </ul>
       <hr />
-      {/* <NewTraining onAddTraining={handleAddTraining} employeeId={employee.id} /> */}
+      <TrainingAdd onAddDisplayTask={handleAddDisplayTask} employeeId={employee.id} />
     </div>
   );
 }

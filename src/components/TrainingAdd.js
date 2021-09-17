@@ -1,23 +1,23 @@
 import { useEffect, useState } from "react";
 
-function NewSignup({ camperId, onAddActivity }) {
-  const [time, setTime] = useState("");
-  const [activityId, setActivityId] = useState("");
-  const [activities, setActivities] = useState([]);
+function TrainingAdd({ employeeId, onAddDisplayTask }) {
+  // const [time, setTime] = useState("");
+  const [taskId, setTaskId] = useState("");
+  const [tasks, setTasks] = useState([]);
   const [errors, setErrors] = useState([]);
 
   useEffect(() => {
     fetch("/tasks")
       .then((r) => r.json())
-      .then(setActivities);
+      .then(setTasks);
   }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
     const formData = {
-      activity_id: Number(activityId),
-      camper_id: camperId,
-      time: Number(time),
+      task_id: Number(taskId),
+      employee_id: employeeId,
+      // time: Number(time),
     };
     fetch("/trainings", {
       method: "POST",
@@ -27,11 +27,11 @@ function NewSignup({ camperId, onAddActivity }) {
       body: JSON.stringify(formData),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((activity) => {
-          setTime("");
-          setActivityId("");
+        r.json().then((task) => {
+          // setTime("");
+          setTaskId("");
           setErrors([]);
-          onAddActivity(activity);
+          onAddDisplayTask(task);
         });
       } else {
         r.json().then((err) => setErrors(err.errors));
@@ -43,16 +43,16 @@ function NewSignup({ camperId, onAddActivity }) {
     <form onSubmit={handleSubmit}>
       <h2>Add New Training</h2>
       <div>
-        <label htmlFor="activity">Activity</label>
+        <label htmlFor="task_id">Task</label>
         <select
-          id="activity"
-          value={activityId}
-          onChange={(e) => setActivityId(e.target.value)}
+          id="task_id"
+          value={taskId}
+          onChange={(e) => setTaskId(e.target.value)}
         >
-          <option value="">Select activity...</option>
-          {activities.map((activity) => (
-            <option key={activity.id} value={activity.id}>
-              {activity.name}
+          <option value="">Select task...</option>
+          {tasks.map((task) => (
+            <option key={task.id} value={task.id}>
+              {task.name}
             </option>
           ))}
         </select>
@@ -76,4 +76,4 @@ function NewSignup({ camperId, onAddActivity }) {
   );
 }
 
-export default NewSignup;
+export default TrainingAdd;
