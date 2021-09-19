@@ -5,6 +5,7 @@ import HomePage from "./components/HomePage";
 // import Home from "./components/Home";
 import Employee from "./components/Employee";
 import EmployeeContainer from "./components/EmployeeContainer";
+import TaskContainer from "./components/TaskContainer";
 // import CategoryDetails from "./components/CategoryDetails";
 
 function App() {
@@ -41,6 +42,10 @@ function App() {
 
           <Route exact path="/employees/:id">
             <Employee />
+          </Route>
+
+          <Route exact path="/tasks">
+            <TaskContainer />
           </Route>
         </Switch>
 

@@ -7,6 +7,7 @@ export default function NavBar() {
         <div className="navbar">
             <Link to="/">Home</Link>
             <Link to="/employees">All Employees</Link>
+            <Link to="/tasks">All Tasks</Link>
             {/* <Link to="/joins">Data from the Join</Link> */}
         </div>
     )
