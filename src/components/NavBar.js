@@ -5,10 +5,9 @@ import '../styles/NavBar.css'
 export default function NavBar() {
     return (
         <div className="navbar">
-            <Link to="/">Home</Link>
-            <Link to="/employees">All Employees</Link>
+            <Link to="/">Home</Link> &nbsp;
+            <Link to="/employees">All Employees</Link> &nbsp;
             <Link to="/tasks">All Tasks</Link>
-            {/* <Link to="/joins">Data from the Join</Link> */}
         </div>
     )
 }
