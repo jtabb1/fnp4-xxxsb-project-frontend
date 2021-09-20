@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 // import Ee from "./Employee.js";
 
 import TaskCreate from "./TaskCreate";
-import TaskLi from "./TaskLi";
+import TaskDiv from "./TaskDiv";
 
 import '../styles/TaskContainer.css'
 
@@ -28,7 +28,7 @@ export default function TaskContainer() {
 
   function populateTasks() {
     return tasks.map((task) => (
-      <TaskLi task={task} onDeleteTask={handleDeleteTask} onUpdateTask={handleUpdateTask} key={task.id} />
+      <TaskDiv task={task} onDeleteTask={handleDeleteTask} onUpdateTask={handleUpdateTask} key={task.id} />
     ));
   }
 
@@ -73,18 +73,9 @@ export default function TaskContainer() {
   return (
       <div>
         <h2 className="home-page-header">Task List</h2>
-        <ul>
-          {tasks.map((task) => (
-            <li key={task.id}>
-              <span>
-                {task.name}, {task.public_id} &nbsp;
-              </span> 
-              <button onClick={() => handleDeleteTask(task.id)}>
-                Delete
-              </button>
-            </li>
-          ))}
-        </ul>
+        <div className="task-container">
+          {tasks && populateTasks()}
+        </div>
         <TaskCreate onCreateTask={onCreateTask} />
       </div>
   );
