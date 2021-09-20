@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import { BASE_URL } from "../constraints/index.js";
-// import Ee from "./Employee.js";
 import EmployeeHire from "./EmployeeHire";
 import '../styles/EmployeeContainer.css'
 
@@ -27,7 +25,7 @@ export default function EmployeeContainer() {
           {employees.map((employee) => (
             <li key={employee.id}>
               <span>
-                {employee.name},   {employee.public_id}
+                {employee.name}, {employee.public_id} -&gt; &nbsp;
               </span>
               <Link to={`/employees/${employee.id}`}>Details</Link>
             </li>
