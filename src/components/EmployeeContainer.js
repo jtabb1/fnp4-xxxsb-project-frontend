@@ -14,8 +14,6 @@ export default function EmployeeContainer() {
     fetch(`/employees`)
       .then((res) => res.json())
       .then(setEmployees)
-      .then(console.log);
-      // .then((json) => setEmployees(json));
   }, []);
   
   function onHireEmployee(newEmployee) {

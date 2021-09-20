@@ -1,34 +1,16 @@
 import { Switch, Route } from "react-router-dom";
-// import "./App.css";
 import NavBar from "./components/NavBar";
 import HomePage from "./components/HomePage";
-// import Home from "./components/Home";
-import Employee from "./components/Employee";
+import EmployeeShow from "./components/EmployeeShow";
 import EmployeeContainer from "./components/EmployeeContainer";
 import TaskContainer from "./components/TaskContainer";
-// import CategoryDetails from "./components/CategoryDetails";
+import TrainingContainer from "./components/TrainingContainer";
 
 function App() {
 
-  // return (
-  //   <main>
-  //     <h1>
-  //       <Link to="/">Working Fun</Link>
-  //     </h1>
-  //     <Switch>
-  //       <Route exact path="/">
-  //         <Home />
-  //       </Route>
-  //       <Route exact path="/employees/:id">
-  //         <Camper />
-  //       </Route>
-  //     </Switch>
-  //   </main>
-  // );
-
   return (
       <div className="app-container">
-        {/* <div className="app-background" /> */}
+
         <NavBar />
 
         <Switch>
@@ -41,11 +23,15 @@ function App() {
           </Route>
 
           <Route exact path="/employees/:id">
-            <Employee />
+            <EmployeeShow />
           </Route>
 
           <Route exact path="/tasks">
             <TaskContainer />
+          </Route>
+
+          <Route exact path="/trainings">
+            <TrainingContainer />
           </Route>
         </Switch>
 

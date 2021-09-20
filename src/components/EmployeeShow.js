@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import TrainingAdd from "./TrainingAdd";
 
-function Employee() {
+function EmployeeShow() {
   const [{ data: employee, error, status }, setEmployee] = useState({
     data: null,
     error: null,
@@ -43,9 +43,6 @@ function Employee() {
   return (
     <div>
       <h2>{employee.name}'s Completed Trainings</h2>
-      {/* <p>
-        {employee}
-      </p> */}
       <ul>
         {employee.tasks.map((task) => (
           <li key={task.id}>
@@ -59,4 +56,4 @@ function Employee() {
   );
 }
 
-export default Employee;
+export default EmployeeShow;

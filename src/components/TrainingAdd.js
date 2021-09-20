@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 function TrainingAdd({ employeeId, onAddDisplayTask }) {
-  // const [time, setTime] = useState("");
   const [taskId, setTaskId] = useState("");
   const [tasks, setTasks] = useState([]);
   const [errors, setErrors] = useState([]);
@@ -17,7 +16,6 @@ function TrainingAdd({ employeeId, onAddDisplayTask }) {
     const formData = {
       task_id: Number(taskId),
       employee_id: employeeId,
-      // time: Number(time),
     };
     fetch("/trainings", {
       method: "POST",
@@ -28,7 +26,6 @@ function TrainingAdd({ employeeId, onAddDisplayTask }) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((task) => {
-          // setTime("");
           setTaskId("");
           setErrors([]);
           onAddDisplayTask(task);
@@ -57,15 +54,6 @@ function TrainingAdd({ employeeId, onAddDisplayTask }) {
           ))}
         </select>
       </div>
-      {/* <div>
-        <label htmlFor="time">Time</label>
-        <input
-          type="number"
-          id="time"
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
-        />
-      </div> */}
       {errors.map((err) => (
         <p key={err} style={{ color: "red" }}>
           {err}
