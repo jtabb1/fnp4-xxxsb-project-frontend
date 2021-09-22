@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
-// import { BASE_URL } from "../constraints/index.js";
-// import Ee from "./Employee.js";
 
 import '../styles/TrainingContainer.css'
 
@@ -23,7 +20,7 @@ export default function TrainingContainer() {
           {trainings.map((training) => (
             <li key={training.id}>
               <span>
-                {training.task_id}, {training.employee_id}
+                {training.task_name}: {training.name}
               </span> 
             </li>
           ))}

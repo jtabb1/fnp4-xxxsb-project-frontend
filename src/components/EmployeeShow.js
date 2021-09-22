@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import TrainingAdd from "./TrainingAdd";
+import EmployeeShowTrainingAdd from "./EmployeeShowTrainingAdd";
 
 function EmployeeShow() {
   const [{ data: employee, error, status }, setEmployee] = useState({
@@ -46,12 +46,12 @@ function EmployeeShow() {
       <ul>
         {employee.tasks.map((task) => (
           <li key={task.id}>
-            {task.name} | Task Number: {task.public_id}
+            {task.task_name} | Task Number: {task.public_id}
           </li>
         ))}
       </ul>
       <hr />
-      <TrainingAdd onAddDisplayTask={handleAddDisplayTask} employeeId={employee.id} />
+      <EmployeeShowTrainingAdd onAddDisplayTask={handleAddDisplayTask} employeeId={employee.id} />
     </div>
   );
 }

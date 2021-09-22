@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function TrainingAdd({ employeeId, onAddDisplayTask }) {
+function EmployeeShowTrainingAdd({ employeeId, onAddDisplayTask }) {
   const [taskId, setTaskId] = useState("");
   const [tasks, setTasks] = useState([]);
   const [errors, setErrors] = useState([]);
@@ -49,7 +49,7 @@ function TrainingAdd({ employeeId, onAddDisplayTask }) {
           <option value="">Select task...</option>
           {tasks.map((task) => (
             <option key={task.id} value={task.id}>
-              {task.name}
+              {task.task_name}
             </option>
           ))}
         </select>
@@ -64,4 +64,4 @@ function TrainingAdd({ employeeId, onAddDisplayTask }) {
   );
 }
 
-export default TrainingAdd;
+export default EmployeeShowTrainingAdd;

@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 function TaskCreate({ onCreateTask }) {
-  const [name, setName] = useState("");
+  const [task_name, setName] = useState("");
   const [taskNum, setTaskNum] = useState("");
   const [errors, setErrors] = useState([]);
 
   function handleSubmit(e) {
     e.preventDefault();
     const formData = {
-      name,
+      task_name,
       public_id: Number(taskNum),
     };
     fetch("/tasks", {
@@ -35,11 +35,11 @@ function TaskCreate({ onCreateTask }) {
     <form onSubmit={handleSubmit}>
       <h2>Create New Task</h2>
       <div>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="task_name">Name:</label>
         <input
           type="text"
-          id="name"
-          value={name}
+          id="task_name"
+          value={task_name}
           onChange={(e) => setName(e.target.value)}
         />
       </div>

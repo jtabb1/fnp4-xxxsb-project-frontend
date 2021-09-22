@@ -23,7 +23,7 @@ export default function TaskDiv({ task, onDeleteTask, onUpdateTask }) {
 
   return(
     <div className="col category-card">
-      <p>{task.name}</p>
+      <p>{task.task_name}</p>
 
       {editMode && (
         <div>
@@ -32,7 +32,7 @@ export default function TaskDiv({ task, onDeleteTask, onUpdateTask }) {
           <form onSubmit={handleUpdate}>
             <input 
               name="name" 
-              value={newTask.name} 
+              value={newTask.task_name} 
               onChange={handleChange} 
             />
             <button type="submit">Update Task</button>
