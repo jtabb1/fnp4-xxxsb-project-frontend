@@ -31,7 +31,7 @@ export default function TaskDiv({ task, onDeleteTask, onUpdateTask }) {
 
           <form onSubmit={handleUpdate}>
             <input 
-              name="name" 
+              name="task_name" 
               value={newTask.task_name} 
               onChange={handleChange} 
             />
